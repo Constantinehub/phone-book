@@ -1,0 +1,14 @@
+{
+  "human1": {
+    "name": "Andrew",
+    "phone": "023482"
+  },
+  "human2": {
+    "name": "Eric",
+    "phone": "030503"
+  },
+  "human3": {
+    "name": "John",
+    "phone": "054032"
+  }
+}
