@@ -13,13 +13,14 @@ let people = JSON.parse(xhr.responseText);
 const table = document.querySelector('table');
 table.className = 'table';
 const headRow = table.createTHead().insertRow();
+const tableBody = table.createTBody();
 
 for(let name in people[0]) {
   headRow.insertCell().textContent = name;
 }
 
 for(let i = 0; i < people.length; i++) {
-  const bodyRow = table.createTBody().insertRow();
+  const bodyRow = tableBody.insertRow();
   for(let val in people[i]) {
     bodyRow.insertCell().textContent = people[i][val];
   }
