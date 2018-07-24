@@ -85,13 +85,18 @@ body {
     height: 40px;
 }
 
-.table th {
+.table th,
+.table td {
+    width: 33.33%;
+}
+
+.table thead td {
     vertical-align: middle;
     text-align: left;
     padding-left: 20px;
     border: 1px solid #ccc;
     font-family: Arial, Tahoma, sans-serif;
-    background-color: #fff;
+    background-color: #f1f1f1;
     font-weight: bold;
 }
 

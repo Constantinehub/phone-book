@@ -1,83 +1,79 @@
-let people = [
-  {
-    "id": 1,
-    "name": "Andrew",
-    "phone": "123456"
-  },
-  {
-    "id": 2,
-    "name": "Eric",
-    "phone": "789192"
-  },
-  {
-    "id": 3,
-    "name": "John",
-    "phone": "323421"
-  }
-];
+"use strict";
 
+//local .json file
+let xhr = new XMLHttpRequest();
 
-let table = document.createElement('table');
-let tr = document.createElement('tr');
-let thead = document.createElement('thead');
-let tbody = document.createElement('tbody');
-let th = document.createElement('th');
-let td = document.createElement('td');
+xhr.open('GET', 'book.json', false);
 
-// Первый способ
-// let tableDom = document.body.appendChild(table).appendChild(thead).appendChild(tr).appendChild(th);
-//
-// for(i = 0; i < people.length; i++) {
-//   tableDom.innerHTML = Object.getOwnPropertyNames(people[i]);
-// }
-//
-// console.log(tableDom);
+xhr.send();
 
+let people = JSON.parse(xhr.responseText);
 
-//Второй способ
-for(let r = 0; r <= people.length; r++) {
-  let row = table.insertRow(r);
+const table = document.querySelector('table');
+table.className = 'table';
+const headRow = table.createTHead().insertRow();
 
-  for(let d = 0; d < people.length; d++) {
-    let data = row.insertCell(d);
+for(let name in people[0]) {
+  headRow.insertCell().textContent = name;
+}
 
-    if(r === 0) {
-      data.innerHTML = Object.getOwnPropertyNames(people[r]);
-    }
+for(let i = 0; i < people.length; i++) {
+  const bodyRow = table.createTBody().insertRow();
+  for(let val in people[i]) {
+    bodyRow.insertCell().textContent = people[i][val];
   }
 }
 
-document.body.appendChild(table).className = 'table';
+// const tableEl = document.querySelector('table');
+// tableEl.className = 'table';
 
-//Тестовый способ
-// let arr=[];
-// let val
-// for(let trow = 0; trow <= people.length; trow++) {
-//   let row = table.insertRow(trow);
+// const headerRow = tableEl.createTHead().insertRow();
+// headerRow.insertCell().textContent = 'Make';
+// headerRow.insertCell().textContent = 'Model';
+// headerRow.insertCell().textContent = 'Color';
 //
-//   for(let key in people) {
-//     if(trow === 0) {
+// const newRow = tableEl.insertRow();
+// newRow.insertCell().textContent = 'Yes';
+// newRow.insertCell().textContent = 'No';
+// newRow.insertCell().textContent = 'Thank you';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let table = document.createElement('table');
+// let row = table.insertRow();
 //
-//       // data.innerHTML = ;
-//       arr.push(people[key]);
-//
-//     }
-//   }
-//
-//   for(let tdata = 0; tdata < people.length; tdata++) {
-//     let data = row.insertCell(tdata);
-//   }
+// for(let key in people[0]) {
+//   let th = document.createElement('th');
+//   th.innerHTML = key;
+//   row.appendChild(th);
 // }
-// console.log(arr);
+//
+//
+// for(let r = 0; r < people.length; r++) {
+//    // debugger;
+//   row = table.insertRow(r);
+//
+//   for(let key in people[r]) {
+//     let td = document.createElement('td');
+//     td.innerHTML = people[r][key];
+//     row.appendChild(td);
+//   }
+//
+//   table.appendChild(row);
+// }
+//
 // document.body.appendChild(table).className = 'table';
-
-
-
-
-// for(i = 0; i < people.length; i++) {
-//
-// }
-
-// for(i = 0; i < people.length; i++){
-//   name.innerHTML = people[i].name;
-// }

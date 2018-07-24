@@ -1,19 +1,18 @@
-{
-  "people": [
-    {
-      "id": 1,
-      "name": "Andrew",
-      "phone": "023482"
-    },
-    {
-      "id": 2,
-      "name": "Eric",
-      "phone": "030503"
-    },
-    {
-      "id": 3,
-      "name": "John",
-      "phone": "054032"
-    }
-  ]
-}
+
+[
+  {
+    "id": 1,
+    "name": "Andrew",
+    "phone": "023482"
+  },
+  {
+    "id": 2,
+    "name": "Eric",
+    "phone": "030503"
+  },
+  {
+    "id": 3,
+    "name": "John",
+    "phone": "054032"
+  }
+]
