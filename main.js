@@ -9,6 +9,7 @@ xhr.send();
 
 let people = JSON.parse(xhr.responseText);
 
+//generated table content
 const table = document.querySelector('table');
 table.className = 'table';
 const headRow = table.createTHead().insertRow();
@@ -24,18 +25,6 @@ for(let i = 0; i < people.length; i++) {
   }
 }
 
-// const tableEl = document.querySelector('table');
-// tableEl.className = 'table';
-
-// const headerRow = tableEl.createTHead().insertRow();
-// headerRow.insertCell().textContent = 'Make';
-// headerRow.insertCell().textContent = 'Model';
-// headerRow.insertCell().textContent = 'Color';
-//
-// const newRow = tableEl.insertRow();
-// newRow.insertCell().textContent = 'Yes';
-// newRow.insertCell().textContent = 'No';
-// newRow.insertCell().textContent = 'Thank you';
 
 
 
